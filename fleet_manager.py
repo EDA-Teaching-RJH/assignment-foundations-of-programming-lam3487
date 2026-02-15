@@ -12,6 +12,8 @@ def main():
         display_roster(names, ranks, divisions, IDs)
     elif choice == 5:
         search_crew(names, ranks, divisions, IDs)
+    elif choice == 6:
+        filter_by_division(names, ranks, divisions, IDs)
         
 
 def init_database():
@@ -83,13 +85,17 @@ def search_crew(names, ranks, divisions, IDs):
     term = input("enter search term ")
     res = zip(names, ranks, divisions, IDs)
     res = list(res)
-    filter = [item for item in res if item[0] == term]
-    print(filter)
+    for i in range(0, 4):
+        filter = [item for item in res if item[i] == term]
+        print(filter)
 
     
-
 def filter_by_division(names, ranks, divisions, IDs):
-    item = input("filter by command, oprations, sciences")
+    term = input("filter by Command, Oprations, Sciences ")
+    res = zip(names, ranks, divisions, IDs)
+    for i in range(0, 4):
+        filter = [item for item in res if item[2] == term]
+        print(filter)
 
 
 
