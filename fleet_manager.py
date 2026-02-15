@@ -6,6 +6,8 @@ def main():
         add_member(names, ranks, divisions, IDs)
     elif choice == 2:
         remove_member(names, ranks, divisions, IDs)
+    elif choice == 3:
+        update_rank(names, ranks, IDs)
         
 
 def init_database():
@@ -62,9 +64,12 @@ def remove_member(names, ranks, divisions, IDs):
     ranks.pop(index)
     divisions.pop(index)
     IDs.pop(index)
-    print(names)
+    print(names, ranks, divisions, IDs)
 
-
+def update_rank(names, ranks, IDs):
+    n = int(input("whats the members ID?: "))
+    ranks[n - 1] = input("whats their rank?: ")
+    print(names, ranks, IDs)
 
 
 
