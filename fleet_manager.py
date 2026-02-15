@@ -4,6 +4,8 @@ def main():
     choice = display_menu()
     if choice == 1:
         add_member(names, ranks, divisions, IDs)
+    elif choice == 2:
+        remove_member(names, ranks, divisions, IDs)
         
 
 def init_database():
@@ -53,6 +55,15 @@ def add_member(names, ranks, divisions, IDs):
             IDs.append(new_ID)
             return names, ranks, divisions, IDs
             break
+
+def remove_member(names, ranks, divisions, IDs):
+    index = int(input("select the ID of the person to remove: "))
+    names.pop(index)
+    ranks.pop(index)
+    divisions.pop(index)
+    IDs.pop(index)
+    print(names)
+
 
 
 
