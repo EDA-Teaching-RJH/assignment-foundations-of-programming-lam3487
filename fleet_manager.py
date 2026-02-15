@@ -13,7 +13,9 @@ def main():
     elif choice == 5:
         search_crew(names, ranks, divisions, IDs)
     elif choice == 6:
-        filter_by_division(names, ranks, divisions, IDs)
+        filter_by_division(names, divisions)
+    elif choice == 7:
+        calculate_payroll(ranks)
         
 
 def init_database():
@@ -90,12 +92,27 @@ def search_crew(names, ranks, divisions, IDs):
         print(filter)
 
     
-def filter_by_division(names, ranks, divisions, IDs):
+def filter_by_division(names, divisions):
     term = input("filter by Command, Oprations, Sciences ")
     res = zip(names, ranks, divisions, IDs)
     for i in range(0, 4):
         filter = [item for item in res if item[2] == term]
         print(filter)
+
+def calculate_payroll(ranks):
+    total = 0
+    for rank in ranks:
+        if rank == "Captain":
+            total = total + 1000
+        elif rank == "Lieutenant":
+            total = total + 800
+        elif rank == "Commander":
+            total = total + 600
+        elif rank == "ensign":
+            total = total + 200
+    print(total)
+
+        
 
 
 
