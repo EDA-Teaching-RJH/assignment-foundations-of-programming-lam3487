@@ -16,6 +16,8 @@ def main():
         filter_by_division(names, divisions)
     elif choice == 7:
         calculate_payroll(ranks)
+    elif choice == 8:
+        count_officers(ranks)
         
 
 def init_database():
@@ -104,17 +106,22 @@ def calculate_payroll(ranks):
     for rank in ranks:
         if rank == "Captain":
             total = total + 1000
-        elif rank == "Lieutenant":
-            total = total + 800
         elif rank == "Commander":
+            total = total + 800
+        elif rank == "Lieutenant":
             total = total + 600
         elif rank == "ensign":
             total = total + 200
     print(total)
 
+def count_officers(ranks):
+    total = 0
+    for rank in ranks:
+        if rank == "Captain" or rank == "Commander":
+            total = total + 1
+    print(total)
+
         
-
-
 
 main()
 
