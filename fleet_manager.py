@@ -1,9 +1,9 @@
 
 def main():
-    init_database()
+    names, ranks, divisions, IDs = init_database()
     choice = display_menu()
     if choice == 1:
-        add_member()
+        add_member(names, ranks, divisions, IDs)
         
 
 def init_database():
@@ -33,8 +33,7 @@ def display_menu():
         else:
             print("invalid")
 
-def add_member():
-    names, ranks, divisions, IDs = init_database()
+def add_member(names, ranks, divisions, IDs):
     valid_ranks = ["Captain", "Lieutenant", "Ensign", "Commander"]
     new_name = input("Name: ")
     new_rank = input("Rank: ")
@@ -52,7 +51,12 @@ def add_member():
             ranks.append(new_rank)
             divisions.append(new_divison)
             IDs.append(new_ID)
+            return names, ranks, divisions, IDs
             break
 
+
+
+
 main()
+
 
