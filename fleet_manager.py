@@ -8,6 +8,8 @@ def main():
         remove_member(names, ranks, divisions, IDs)
     elif choice == 3:
         update_rank(names, ranks, IDs)
+    elif choice == 4:
+        display_roster(names, ranks, divisions, IDs)
         
 
 def init_database():
@@ -70,6 +72,10 @@ def update_rank(names, ranks, IDs):
     n = int(input("whats the members ID?: "))
     ranks[n - 1] = input("whats their rank?: ")
     print(names, ranks, IDs)
+
+def display_roster(names, ranks, divisions, IDs):
+    for i in range(len(names)):
+        print(names[i], ranks[i], divisions[i], IDs[i])
 
 
 
