@@ -10,6 +10,8 @@ def main():
         update_rank(names, ranks, IDs)
     elif choice == 4:
         display_roster(names, ranks, divisions, IDs)
+    elif choice == 5:
+        search_crew(names, ranks, divisions, IDs)
         
 
 def init_database():
@@ -76,6 +78,18 @@ def update_rank(names, ranks, IDs):
 def display_roster(names, ranks, divisions, IDs):
     for i in range(len(names)):
         print(names[i], ranks[i], divisions[i], IDs[i])
+
+def search_crew(names, ranks, divisions, IDs):
+    term = input("enter search term ")
+    res = zip(names, ranks, divisions, IDs)
+    res = list(res)
+    filter = [item for item in res if item[0] == term]
+    print(filter)
+
+    
+
+def filter_by_division(names, ranks, divisions, IDs):
+    item = input("filter by command, oprations, sciences")
 
 
 
